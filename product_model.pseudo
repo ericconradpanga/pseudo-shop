@@ -51,3 +51,46 @@ function get_product_by_id(product_id):
 
     # Return null if not found
     return null
+
+# Function to filter products by attributes
+function filter_products(filters):
+    filtered_list = []
+    
+    # Iterate through all products
+    for each product in product_list:
+        matches_criteria = true
+
+        # Check each filter criterion
+        if "name" in filters:
+            if product.name.lower() not contains filters.name.lower():
+                matches_criteria = false
+
+        if "width" in filters:
+            if product.width != filters.width:
+                matches_criteria = false
+        
+        if "height" in filters:
+            if product.height != filters.height:
+                matches_criteria = false
+
+        if "length" in filters:
+            if product.length != filters.length:
+                matches_criteria = false
+
+        if "weight" in filters:
+            if product.weight != filters.weight:
+                matches_criteria = false
+
+        if "color" in filters:
+            if product.color.lower() != filters.color.lower()
+                matches_criteria = false
+        
+        if "brand" in filters:
+            if product.brand.lower() != filters.brand.lower()
+                matches_criteria = false
+
+        # Add to filtered results if all criteria match
+        if matches_criteria:
+            filtered_list.append(product)
+
+    return filtered_list
