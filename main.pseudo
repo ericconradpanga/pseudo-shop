@@ -17,6 +17,7 @@ if choice is equal to 1:
 
     if login_response is success:
         user = login_response
+        view_products()
 
 if choice is equal to 2:
     input name, email, password
@@ -24,6 +25,7 @@ if choice is equal to 2:
 
     if register_response is success:
         user = register_response
+        view_products()
 
 if choice is equal to 3:
     input admin_email, admin_password
@@ -39,6 +41,7 @@ if choice is equal to 3:
             add_product()
         
         if admin_choice is equal to 2:
+            view_products()
             input product_id
             product = get_product_by_id(product_id)
             print product
@@ -51,4 +54,28 @@ if choice is equal to 4:
 
 else:
     print "Invalid input. Please choose another option."
+
+function view_products():
+    filters = []
+
+    print "Filters:"
+    print "[0] None"
+    print "[1] Name"
+    print "[2] Width"
+    print "[3] Height"
+    print "[4] Length"
+    print "[5] Weight"
+    print "[6] Color"
+    print "[7] Brand"
+
+    input filters_choice
+
+    if filters_choice is equal to 0:
+        display_products()
+
+    if filters_choice is in range from 1 to 7:
+        print filter_products(filters)
+
+    else:
+        print "Invalid input. Please choose another option."
 
