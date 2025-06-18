@@ -3,23 +3,27 @@
 # List to store user information
 users = []
 
+# Function to create a user
 function create_user(name, email, password):
-    if name is None or email is None or password is None:
+    if name is None or email is None or password is None: # Checks all required information
         return "Name, email, and password are required."
     
+    # Create a new user entity
     new_user = {
         "name": name
         "email": email
         "password": password
     }
     
+    # Add new user entity to list of users
     users.append(new_user)
 
     return "User has been created successfully."
 
+# Function to log a user in
 function login_user(email, password):
-    for user in users:
-        if user["email"] == email and user["password"] == password:
+    for user in users: # Find the user in the list of all users
+        if user["email"] == email and user["password"] == password: # Checks if the email exists and password matches
             return "Login successful."
     
     return "Invalid email or password."
