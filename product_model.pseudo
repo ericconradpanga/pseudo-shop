@@ -52,12 +52,15 @@ function get_product_by_id(product_id):
     # Return null if not found
     return null
 
+# Function to filter products by attributes
 function filter_products(filters):
     filtered_list = []
     
+    # Iterate through all products
     for each product in product_list:
         matches_criteria = true
 
+        # Check each filter criterion
         if "name" in filters:
             if product.name.lower() not contains filters.name.lower():
                 matches_criteria = false
@@ -86,6 +89,7 @@ function filter_products(filters):
             if product.brand.lower() != filters.brand.lower()
                 matches_criteria = false
 
+        # Add to filtered results if all criteria match
         if matches_criteria:
             filtered_list.append(product)
 
