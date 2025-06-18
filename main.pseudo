@@ -1,8 +1,83 @@
 # Main entry point
 
 # This file ties together all components of the pseudo-shop
-# Feel free to modify this to simulate application flow
 
 # Run the app
-print "Welcome to the Pseudo Shop!"
+print "Welcome to Echo and Cocoy's Pseudo Shop!"
+print "[1] Login"
+print "[2] Register"
+print "[3] Login as administrator"
+print "[4] Exit"
+
+input choice # Asks for users input
+
+if choice is equal to 1: # Logs the user in with credentials
+    input email, password
+    login_response = login_user(email, password)
+
+    if login_response is success: # Display products if user has logged in
+        user = login_response
+        view_products()
+
+if choice is equal to 2: # Create a user with name, email, and password
+    input name, email, password
+    register_response = create_user(name, email, password)
+
+    # Logs user in automatically and display products if register is successful
+    if register_response is success:
+        user = register_response
+        view_products()
+
+if choice is equal to 3: # Logs user in as administrator
+    input admin_email, admin_password
+    login_as_admin_response = login_user(admin_email, admin_password)
+
+    # Administrators can add or view a product
+    if login_as_admin_response is success:
+        input admin_choice
+
+        print "[1] Add a product"
+        print "[2] View a product"
+
+        if admin_choice is equal to 1:
+            add_product()
+        
+        if admin_choice is equal to 2:
+            view_products()
+            input product_id
+            product = get_product_by_id(product_id)
+            print product
+
+        else:
+            print "Invalid input. Please choose another option."
+
+if choice is equal to 4: # Exits the program
+    exit()
+
+else: # Prints an error message
+    print "Invalid input. Please choose another option."
+
+function view_products():
+    filters = [] # Keeps track of all selected filters
+
+    print "Filters:"
+    print "[0] None"
+    print "[1] Name"
+    print "[2] Width"
+    print "[3] Height"
+    print "[4] Length"
+    print "[5] Weight"
+    print "[6] Color"
+    print "[7] Brand"
+
+    input filters_choice
+
+    if filters_choice is equal to 0: # Displays all products without filters
+        display_products()
+
+    if filters_choice is in range from 1 to 7: # Displays filtered products
+        print filter_products(filters)
+
+    else:
+        print "Invalid input. Please choose another option."
 
