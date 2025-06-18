@@ -3,7 +3,7 @@
 # This file ties together all components of the pseudo-shop
 
 # Run the app
-print "Welcome to the Pseudo Shop!"
+print "Welcome to Cocoy's Shop!"
 print "[1] Login"
 print "[2] Register"
 print "[3] Login as administrator"
