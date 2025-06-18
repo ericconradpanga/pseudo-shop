@@ -18,12 +18,12 @@ function create_user(name, email, password):
     # Add new user entity to list of users
     users.append(new_user)
 
-    return "User has been created successfully."
+    return new_user
 
 # Function to log a user in
 function login_user(email, password):
     for user in users: # Find the user in the list of all users
         if user["email"] == email and user["password"] == password: # Checks if the email exists and password matches
-            return "Login successful."
+            return user
     
     return "Invalid email or password."
