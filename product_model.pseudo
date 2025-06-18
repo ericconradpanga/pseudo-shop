@@ -36,3 +36,10 @@ function add_product(id, name, width, height, length, weight, color, brand):
 
 function get_all_products():
     return product_list
+
+function get_product_by_id(product_id):
+    for each product in product_list:
+        if product.id == product_id:
+            return product
+
+    return null
