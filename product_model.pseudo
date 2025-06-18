@@ -22,6 +22,7 @@ function add_product(id, name, width, height, length, weight, color, brand):
         "id": next_product_id,
         "name": name,
         "width", width,
+        "height", height,
         "length", length,
         "weight", weight,
         "color", color,
