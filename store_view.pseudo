@@ -1,5 +1,11 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
+function display_products():
+    product_list = get_all_products() # Fetch all products
 
+    for each product in product_list: # Prints each product and its details
+        print product.name
+        print product.height + "x" + product.width + "x" + product.length
+        print product.brand
+        print product.color
+        print newline
