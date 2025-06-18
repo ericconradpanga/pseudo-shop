@@ -58,6 +58,35 @@ function filter_products(filters):
     for each product in product_list:
         matches_criteria = true
 
+        if "name" in filters:
+            if product.name.lower() not contains filters.name.lower():
+                matches_criteria = false
+
+        if "width" in filters:
+            if product.width != filters.width:
+                matches_criteria = false
         
+        if "height" in filters:
+            if product.height != filters.height:
+                matches_criteria = false
+
+        if "length" in filters:
+            if product.length != filters.length:
+                matches_criteria = false
+
+        if "weight" in filters:
+            if product.weight != filters.weight:
+                matches_criteria = false
+
+        if "color" in filters:
+            if product.color.lower() != filters.color.lower()
+                matches_criteria = false
+        
+        if "brand" in filters:
+            if product.brand.lower() != filters.brand.lower()
+                matches_criteria = false
+
+        if matches_criteria:
+            filtered_list.append(product)
 
     return filtered_list
