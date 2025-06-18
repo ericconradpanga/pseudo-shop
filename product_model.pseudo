@@ -33,3 +33,6 @@ function add_product(id, name, width, height, length, weight, color, brand):
     print "Product added: " + name + " (ID: " + str(new_product.id) + ")"
     
     return new_product
+
+function get_all_products():
+    return product_list
