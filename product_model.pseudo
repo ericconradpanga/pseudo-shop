@@ -51,3 +51,13 @@ function get_product_by_id(product_id):
 
     # Return null if not found
     return null
+
+function filter_products(filters):
+    filtered_list = []
+    
+    for each product in product_list:
+        matches_criteria = true
+
+        
+
+    return filtered_list
