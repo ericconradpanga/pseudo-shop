@@ -15,7 +15,9 @@
 product_list = []
 next_product_id = 1
 
+# Function to add product
 function add_product(id, name, width, height, length, weight, color, brand):
+    # Create new product object
     new_product = {
         "id": next_product_id,
         "name": name,
@@ -26,20 +28,26 @@ function add_product(id, name, width, height, length, weight, color, brand):
         "brand", brand
     }
 
+    # Add to product list
     product_list.append(new_product)
 
+    # Increment ID counter for next product
     next_product_id = next_product_id + 1
 
     print "Product added: " + name + " (ID: " + str(new_product.id) + ")"
-    
+
     return new_product
 
+# Function to get all products
 function get_all_products():
     return product_list
 
+# Function to get product by ID
 function get_product_by_id(product_id):
+    # Search for product with matching ID
     for each product in product_list:
         if product.id == product_id:
             return product
 
+    # Return null if not found
     return null
